@@ -1,0 +1,19 @@
+<div class="row mt-5">
+  <div class="col-md-4">
+    <h3>Product List</h3>
+    <ul class="list-group">
+      <li
+        [routerLink]="[product.id]"
+        *ngFor="let product of productsArr"
+        class="list-group-item bg-dark text-light"
+      >
+        {{ product.name }}
+      </li>
+    </ul>
+    <div class="text-right">
+      <button [routerLink]="['/home']" class="btn btn-sm btn-primary mt-5">
+        Home
+      </button>
+    </div>
+  </div>
+</div>

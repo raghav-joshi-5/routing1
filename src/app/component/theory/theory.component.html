@@ -1,0 +1,109 @@
+<p>
+  router-outlet /router-outlet => this tag is responsible to route all the
+  component on UI
+</p>
+<hr />
+<br />
+<p>
+  at the rate symobl NgModule({{ "{" }} imports: [RouterModule.forRoot(routes)],
+  // configure the router at the application's root level i.e app.module.ts
+  <br />
+  exports: [RouterModule], // export the RouterModule so it can be used
+  throughout the application {{ "}" }})
+</p>
+
+<p>
+  in the navbar : routerLinkActive Option will active those link where the user
+  click
+  <br />
+  routerLinkActive Options will make the link active only when the route is
+  exactly matched
+</p>
+<hr />
+<br />
+
+<button routerLink="/products" class="btn btn-sm btn-info">
+  go to products
+</button>
+
+<p>
+  this will redirected to product component without condition in template file
+</p>
+<hr />
+<br />
+
+<button (click)="goToProducts()" class="btn btn-sm btn-info">
+  go to users
+</button>
+<p>this will redirected to product component on click event on condition</p>
+<hr />
+<br />
+
+<p>
+  absolute path: /products : this will take you to the root of the application
+  and then to the products route this will add the products route to the current
+  route this will use the base URL and add the products route to it
+  <br />
+  relative path: products : this will take you to the current route and then to
+  the products route this will add the products to base route <br />
+  currentActiveURL+add url to currentActiveURL : this will take you to the
+  current active route
+</p>
+<hr />
+<br />
+
+<p>all this is in theory.component.ts file</p>
+<p>
+  constructor(private _router: Router) {{ "{" }}{{ "}" }} // inject the Router
+  service
+  <br />
+  // function to redirect to the products route when the user clicks on the
+  button <br />
+  goToProducts() {{ "{" }} <br />
+  // API call to redirect to the products route <br />
+  this._router.navigate(['/products']);<br />
+  {{ "}" }} <br />
+  // navigate to the products route
+</p>
+<hr />
+<br />
+<p>
+  {{ "{" }} <br />
+  path: 'home', // http://localhost:4200/home
+  <br />
+  component: HomeComponent, // component to render when the path is matched and
+  open home component<br />
+  title: 'Home', // title of the route<br />
+  {{ "{" }},
+</p>
+
+<hr />
+<br />
+<p>
+  {{ "{" }} <br />
+  path: '**', // wildcard route to match any path that is not defined or matched
+  with any other route in the application
+  <br />
+  component: PagenotfoundComponent, // component to render when the path is
+  matched <br />
+  title: 'Page Not Found', // title of the route<br />
+  {{ "{" }},
+</p>
+
+<hr />
+<br />
+<p>
+  {{ "{" }} <br />
+  path: 'pagenotfound', // http://localhost:4200/pagenotfound or any invalid
+  path that is not defined
+  <br />
+  component: PagenotfoundComponent, // component to render when the path is
+  matched <br />
+  title: 'Page Not Found', // title of the route<br />
+  {{ "{" }},
+</p>
+<div class="text-center">
+  <button [routerLink]="['/home']" class="btn btn-sm btn-primary mt-5">
+    Home
+  </button>
+</div>

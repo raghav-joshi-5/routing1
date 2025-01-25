@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="card text-dark mb-3">
+      <div class="card-header bg-success">
+        <h3>{{ userObj.name }}</h3>
+        <p>{{ userObj.role }}</p>
+      </div>
+      <div class="card-body">
+        <p>{{ userObj.workDescription }}</p>
+      </div>
+      <div class="card-footer text-right">
+        <a [routerLink]="['/users']" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+  </div>
+</div>
