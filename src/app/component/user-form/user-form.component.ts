@@ -1,4 +1,5 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-form',
@@ -6,8 +7,16 @@ import { Component, OnInit,  } from '@angular/core';
   styleUrls: ['./user-form.component.scss'],
 })
 export class UserFormComponent implements OnInit {
+  isEditMode: boolean = false;
+  userId!: string;
+  constructor(private _routs: ActivatedRoute) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userId = this._routs.snapshot.params['id'];
+    if (this.userId) {
+      this.isEditMode = true;
+    } else {
+      this.isEditMode = false;
+    }
+  }
 }

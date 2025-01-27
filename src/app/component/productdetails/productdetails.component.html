@@ -9,7 +9,10 @@
         <p>quantity : {{ prodObj.quantity }}</p>
       </div>
       <div class="card-footer d-flex justify-content-between">
-        <button [routerLink]="['prodForm']" class="btn btn-primary">
+        <button
+          [routerLink]="['/products', prodId, 'prodForm']"
+          class="btn btn-primary"
+        >
           Edit
         </button>
         <button [routerLink]="['/remove']" class="btn btn-danger">
