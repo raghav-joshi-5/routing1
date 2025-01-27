@@ -1,1 +1,60 @@
-<p>userForm works!</p>
+<!-- <h3 *ngIf="!isEditMode">Add user</h3>
+<h3 *ngIf="isEditMode">Edit User</h3> -->
+
+<!-- <h3>{{ isEditMode ? "Edit " : "Add " }} User</h3> -->
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div class="card text-dark">
+      <div class="card-body">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="name"
+              id="name"
+              placeholder="Enter name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" class="form-control" formControlName="role">
+              <option value="admin">Admin</option>
+              <option value="candidate">Candidate</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="workDescription">Work Description</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="workDescription"
+              id="workDescription"
+              placeholder="Enter workDescription"
+            />
+          </div>
+
+          <div class="text-right">
+            <button
+              *ngIf="!isEditMode"
+              type="submit"
+              class="btn btn-sm btn-primary"
+            >
+              Add User
+            </button>
+            <!-- <button
+              *ngIf="isEditMode"
+              type="submit"
+              class="btn btn-sm btn-primary"
+            >
+              Edit User
+            </button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

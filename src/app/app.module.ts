@@ -12,7 +12,7 @@ import { UserInfoComponent } from './component/user-info/user-info.component';
 import { ProductdetailsComponent } from './component/productdetails/productdetails.component';
 import { ProdFormComponent } from './component/prod-form/prod-form.component';
 import { UserFormComponent } from './component/user-form/user-form.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     ProdFormComponent,
     UserFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

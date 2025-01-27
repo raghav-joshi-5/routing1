@@ -7,9 +7,14 @@
       <div class="card-body text-dark">
         <p>product Description:{{ prodObj.productDescription }}</p>
         <p>quantity : {{ prodObj.quantity }}</p>
+        <p>Product Status : {{ prodObj.prodStatus }}</p>
+        <p>Type : {{ prodObj.type }}</p>
       </div>
       <div class="card-footer d-flex justify-content-between">
-        <button [routerLink]="['prodForm']" class="btn btn-primary">
+        <button
+          [routerLink]="['/products', prodId, 'prodForm']"
+          class="btn btn-primary"
+        >
           Edit
         </button>
         <button [routerLink]="['/remove']" class="btn btn-danger">
