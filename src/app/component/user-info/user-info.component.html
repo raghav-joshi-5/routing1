@@ -8,8 +8,14 @@
       <div class="card-body">
         <p>{{ userObj.workDescription }}</p>
       </div>
-      <div class="card-footer text-right">
-        <a [routerLink]="['/users']" class="btn btn-primary">Back</a>
+      <div class="card-footer d-flex justify-content-between">
+        <button [routerLink]="['userForm']" class="btn btn-primary">
+          Edit
+        </button>
+        <button [routerLink]="['/remove']" class="btn btn-danger">
+          Remove
+        </button>
+        <button [routerLink]="['/users']" class="btn btn-primary">Back</button>
       </div>
     </div>
   </div>
